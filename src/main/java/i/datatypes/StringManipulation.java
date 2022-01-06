@@ -7,9 +7,10 @@ package i.datatypes;
 public class StringManipulation {
 
     public static void main(String[] args) {
-        System.out.println(concatStringToString("Jeril"));
-        System.out.println(concatStringToStringBuilder(new StringBuilder("Jeril")));
-        System.out.println(concatStringToStringBuffer(new StringBuffer("Jeril")));
+//        System.out.println(concatStringToString("Jeril"));
+//        System.out.println(concatStringToStringBuilder(new StringBuilder("Jeril")));
+//        System.out.println(concatStringToStringBuffer(new StringBuffer("Jeril")));
+        WhyWeNeedStringBuilder();
     }
 
     public static String concatStringToString (String str) {
@@ -24,6 +25,22 @@ public class StringManipulation {
         return stringBuffer.append("Hello").toString();
     }
 
+    /**
+     * Below function will create 27 String objects, most of which are immediately available for garbage collection, which is very inefficient.
+     * Java solution is StringBuilder, which builds a String without storing all those interim String values. StringBuilder is not immutable
+     */
+    public static void WhyWeNeedStringBuilder () {
+        String alpha = "";
+        for (char current = 'a'; current <= 'z'; current++)
+            alpha += current;
+        System.out.println(alpha);
+
+        // String builder way of doing the above
+        StringBuilder beta = new StringBuilder();
+        for (char current = 'a'; current <= 'z'; current++)
+            beta.append(current);
+        System.out.println(beta);
+    }
 
 }
 
