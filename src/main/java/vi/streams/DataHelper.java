@@ -14,6 +14,7 @@ public class DataHelper {
         names.add("JIM");
         names.add("MARK");
         names.add("CHRIS");
+        names.add("THUNDER");
         return names;
     }
 
