@@ -15,7 +15,6 @@ public class StreamsInit {
         });
         System.out.println(collectResults());
         System.out.println(returnEvenNumbers());
-
     }
 
     public static List<String> mapStreamFilterCollection(List<String> list){

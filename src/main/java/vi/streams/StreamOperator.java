@@ -26,8 +26,6 @@ public class StreamOperator {
                 .filter( brick -> brick.getColor() == color)
                 .mapToInt(brick -> brick.getWeight())
                 .sum();
-
     }
-
 
 }
